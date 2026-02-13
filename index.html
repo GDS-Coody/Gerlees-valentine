@@ -96,17 +96,18 @@ const messages = [
   `За за… “Yes” дээр дарчих 😌`
 ];
 
+
     let messageIndex = 0;
 
     noBtn.addEventListener("click", () => {
       msgEl.textContent = messages[messageIndex];
       messageIndex = (messageIndex + 1) % messages.length;
 
-
+      
       const currentSize = parseFloat(getComputedStyle(yesBtn).fontSize);
       yesBtn.style.fontSize = (currentSize * 1.25) + "px";
 
-      
+     
       const noSize = parseFloat(getComputedStyle(noBtn).fontSize);
       noBtn.style.fontSize = Math.max(12, noSize * 0.95) + "px";
     });
@@ -117,5 +118,6 @@ const messages = [
   </script>
 </body>
 </html>
+
 
 
