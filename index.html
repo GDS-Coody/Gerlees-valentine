@@ -102,9 +102,6 @@ const messages = [
       msgEl.textContent = messages[messageIndex];
       messageIndex = (messageIndex + 1) % messages.length;
 
-        document.getElementById("title").textContent =
-          `${crushName}, will you be my Valentine?`;
-
 
       const currentSize = parseFloat(getComputedStyle(yesBtn).fontSize);
       yesBtn.style.fontSize = (currentSize * 1.25) + "px";
@@ -120,4 +117,5 @@ const messages = [
   </script>
 </body>
 </html>
+
 
