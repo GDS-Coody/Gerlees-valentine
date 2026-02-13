@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Valentine?</title>
@@ -68,8 +69,7 @@
   <div class="card">
     <h1>Will you be my Valentine?</h1>
 
-    <!-- Хөөрхөн зураг: хүсвэл өөр зурагны link/файл тавьж болно -->
-    <img class="cute" alt="cute" src="https://i.imgur.com/5cX1V9R.png" />
+    <img class="cute" alt="cute" src="https://media.tenor.com/QWAo2echlVEAAAAC/cute.gif" />
 
     <div class="buttons">
       <button class="yes-button" id="yesBtn">Yes</button>
@@ -83,16 +83,18 @@
     const yesBtn = document.getElementById("yesBtn");
     const noBtn  = document.getElementById("noBtn");
     const msgEl  = document.getElementById("msg");
+    
+  const myName = "Gan-Erdene";
+  const crushName = "Gerlee";
 
-    // "No" дарах бүрт гарах үгсээ энд өөрчилж болно
-    const messages = [
-      "Are you really sure? 🥺",
-      "Think again… 😳",
-      "Don’t do this to me 😭",
-      "I’ll be so sad… 💔",
-      "Last chance! 😤",
-      "Ok… but Yes is right there 😌"
-    ];
+const messages = [
+  `${crushName} ээ, үнэхээр үү? 🥺`,
+  `Дахиад нэг бодоод үз дээ, ${crushName} 😳`,
+  `Нээрээ татгалзчих гэж үү 😭`,
+  `За тэгвэл би гомдоно шүү 💔`,
+  `Сүүлчийн боломж! 😤`,
+  `За за… “Yes” дээр дарчих 😌`
+];
 
     let messageIndex = 0;
 
@@ -100,11 +102,14 @@
       msgEl.textContent = messages[messageIndex];
       messageIndex = (messageIndex + 1) % messages.length;
 
-      // Yes товчийг томруулах
+        document.getElementById("title").textContent =
+          `${crushName}, will you be my Valentine?`;
+
+
       const currentSize = parseFloat(getComputedStyle(yesBtn).fontSize);
       yesBtn.style.fontSize = (currentSize * 1.25) + "px";
 
-      // No товчийг жаахан жижигрүүлж болно (сонголттой)
+      
       const noSize = parseFloat(getComputedStyle(noBtn).fontSize);
       noBtn.style.fontSize = Math.max(12, noSize * 0.95) + "px";
     });
@@ -115,3 +120,4 @@
   </script>
 </body>
 </html>
+
