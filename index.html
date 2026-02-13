@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Valentine?</title>
@@ -73,7 +72,8 @@
 
     <div class="buttons">
       <button class="yes-button" id="yesBtn">Yes</button>
-      <button class="no-button" id="noBtn">Are you sure?</button>
+      <!-- Эхэндээ No гэж харагдана -->
+      <button class="no-button" id="noBtn">No</button>
     </div>
 
     <div class="msg" id="msg"></div>
@@ -83,35 +83,37 @@
     const yesBtn = document.getElementById("yesBtn");
     const noBtn  = document.getElementById("noBtn");
     const msgEl  = document.getElementById("msg");
-    
-  const myName = "Gan-Erdene";
-  const crushName = "Gerlee";
 
-const messages = [
-  `${crushName} ээ, үнэхээр үү? 🥺`,
-  `Дахиад нэг бодоод үз дээ, ${crushName} 😳`,
-  `Нээрээ татгалзчих гэж үү 😭`,
-  `За дахиад нэг бодоод үз дээ, ${crushName} 😳`,
-  `Би чамайг инээмсэглүүлэхийг л хүссэн юм 🫶`,
-  `Сүүлчийн боломж! 😤`,
-  `За за… “Yes” дээр дарчих 😌`
-  `Сүүлийн асуулт: ${crushName} — миний Valentine болох уу? 💞`,
-  `Одоо бол бүр үнэнээсээ гуйя 😤👉 “Yes”`,
-  `За тэгээд… “Yes” дээр дарчихвал би хамгийн аз жаргалтай хүн болно 😚✨`
-];
+    const myName = "Gan-Erdene";
+    const crushName = "Gerlee";
 
+    const messages = [
+      `Are you sure? 🥺`,
+      `${crushName} ээ, үнэхээр үү? 😳`,
+      `Дахиад нэг бодоод үз дээ, ${crushName} 🙏`,
+      `Нээрээ татгалзчих гэж үү 😭`,
+      `Би чамайг инээмсэглүүлэхийг л хүссэн юм 🫶`,
+      `Сүүлчийн боломж! 😤`,
+      `За за… “Yes” дээр дарчих 😌`,
+      `Сүүлийн асуулт: ${crushName} — миний Valentine болох уу? 💞`,
+      `Одоо бол бүр үнэнээсээ гуйя 😤👉 “Yes”`,
+      `“Yes” дээр дарчихвал би хамгийн аз жаргалтай хүн болно 😚✨`
+    ];
 
     let messageIndex = 0;
 
     noBtn.addEventListener("click", () => {
-      msgEl.textContent = messages[messageIndex];
+      const text = messages[messageIndex];
+
+      msgEl.textContent = text;
+
+      noBtn.textContent = text;
+
       messageIndex = (messageIndex + 1) % messages.length;
 
-      
       const currentSize = parseFloat(getComputedStyle(yesBtn).fontSize);
       yesBtn.style.fontSize = (currentSize * 1.25) + "px";
 
-     
       const noSize = parseFloat(getComputedStyle(noBtn).fontSize);
       noBtn.style.fontSize = Math.max(12, noSize * 0.95) + "px";
     });
@@ -122,7 +124,3 @@ const messages = [
   </script>
 </body>
 </html>
-
-
-
-
